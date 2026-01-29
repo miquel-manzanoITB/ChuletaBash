@@ -58,6 +58,12 @@ fi
 -ge >=
 -le <=
 ```
+ex:
+```
+if [ $1 -eq 2 ]; then
+   echo "Dos"
+fi
+```
 
 ## Comparar strings
 ```

@@ -186,6 +186,47 @@ date
 ## /etc/passwd formato
 `usuario:x:UID:GID:info:/home:/shell`
 
+## Permisos chmod
+```
+rwx r-x r--
+│   │   │
+│   │   └── Otros (others)
+│   └────── Grupo (group)
+└────────── Usuario dueño (owner)
+```
+| Permiso  | Letra | Significado  |
+| -------- | ----- | ------------ |
+| Leer     | r     | leer archivo |
+| Escribir | w     | modificar    |
+| Ejecutar | x     | ejecutar     |
+```
+chmod u+x script.sh   # usuario
+chmod g+w file.txt   # grupo
+chmod o-r file.txt   # otros
+chmod a+x script.sh  # todos
+```
+**Valores binarios**
+| Permiso | Valor |
+| ------- | ----- |
+| r       | 4     |
+| w       | 2     |
+| x       | 1     |
+
+**Funcionamiento:**
+| Permisos | Binario | Decimal |
+| -------- | ------- | ------- |
+| ---      | 000     | 0       |
+| --x      | 001     | 1       |
+| -w-      | 010     | 2       |
+| -wx      | 011     | 3       |
+| r--      | 100     | 4       |
+| r-x      | 101     | 5       |
+| rw-      | 110     | 6       |
+| rwx      | 111     | 7       |
+
+ex:
+`chmod 755 script.sh`
+
 ## Debug
 `bash -x script.sh`
 
